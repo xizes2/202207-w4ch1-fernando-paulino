@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  color: white;
+}
+
+.circles-list {
+  display: flex;
+  justify-content: space-around;
+}
