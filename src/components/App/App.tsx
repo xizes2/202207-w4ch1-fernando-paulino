@@ -1,8 +1,10 @@
 import "./App.css";
 import Gentlemen from "../Gentlemen/Gentlemen";
 import Info from "../Info/Info";
+import gentlemen from "../../types/interfaces";
+import Button from "../Button/Button";
 
-const gentlemen = [
+const gentleman: gentlemen[] = [
   {
     id: 1,
     name: "Bertin Osborne",
@@ -38,8 +40,17 @@ const gentlemen = [
 const App = (): JSX.Element => {
   return (
     <div className="container">
-      <Info />
-      <Gentlemen />
+      <header className="main-header">
+        <h1 className="main-title">The pointing gentlemen</h1>
+      </header>
+      <section className="controls">
+        <Info />
+        <Button />
+      </section>
+      {gentleman.map((gentleman) => (
+        <Gentlemen key={gentleman.id} gentlemen={gentleman} />
+      ))}
+      ;
     </div>
   );
 };
